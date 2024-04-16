@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Formulário PHP</title>
+</head>
+<body>
+    
+    <form method="post">
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome" value=><br><br>
+
+        <label for="idade">Idade:</label><br>
+        <input type="text" id="idade" name="idade" value=><br><br>
+
+        <label for="cidade">Cidade que mora:</label><br>
+        <input type="text" id="cidade" name="cidade" value=><br><br>
+
+        <label for="estados">Estados que visitou:</label><br>
+        <select id="estados" name="estados[]" multiple>
+            <option value="AC" <?php if (isset($_POST['estados']) && in_array('AC', $_POST['estados'])) echo 'selected'; ?>Acre</option>
+            <option value="AL" <?php if (isset($_POST['estados']) && in_array('AL', $_POST['estados'])) echo 'selected'; ?>Alagoas</option>
+            <option value="AP" <?php if (isset($_POST['estados']) && in_array('AP', $_POST['estados'])) echo 'selected'; ?>Amapa</option>
+            <option value="AC" <?php if (isset($_POST['estados']) && in_array('AC', $_POST['estados'])) echo 'selected'; ?>Distrito Federal</option>
+            <option value="AL" <?php if (isset($_POST['estados']) && in_array('AL', $_POST['estados'])) echo 'selected'; ?>Pernambuco</option>
+            <option value="AC" <?php if (isset($_POST['estados']) && in_array('AC', $_POST['estados'])) echo 'selected'; ?>Goias</option>
+            <option value="AL" <?php if (isset($_POST['estados']) && in_array('AL', $_POST['estados'])) echo 'selected'; ?>Maranhao</option>
+            <option value="AP" <?php if (isset($_POST['estados']) && in_array('AP', $_POST['estados'])) echo 'selected'; ?>bahia</option>
+           
+        </select><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $nome = $_POST["nome"];
+        $idade = $_POST["idade"];
+        $cidade = $_POST["cidade"];
+        $estados = $_POST["estados"];
+
+    
+</body>
+</html>
