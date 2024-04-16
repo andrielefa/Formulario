@@ -1,0 +1,19 @@
+<?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $nome = $_POST["nome"];
+        $idade = $_POST["idade"];
+        $cidade = $_POST["cidade"];
+        $estados = $_POST["estados"];
+
+        echo "<h2>Dados recebidos:</h2>";
+        echo "Nome: $nome<br>";
+        echo "Idade: $idade<br>";
+        echo "Cidade que mora: $cidade<br>";
+        echo "Estados que visitou:<br>";
+        foreach ($estados as $estado) {
+            echo "- $estado<br>";
+        }
+    }
+    ?>
+</body>
+</html>
